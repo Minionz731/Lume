@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMÉ by Kiesha - Mobile Wellness & Skin Care</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>LUMÉ</h1>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#booking" class="btn-reservation">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2 class="hero-title">Mobile Spa<br>at the comfort of your home</h2>
+            <p class="hero-subtitle">Relax, Rejuvenate, and Recharge—Wherever you are</p>
+            <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Book Your Session</button>
+        </div>
+        <div class="hero-banner">
+            <div class="banner-grid">
+                <div class="banner-item"><img src="https://via.placeholder.com/200x200?text=Massage" alt="Massage"></div>
+                <div class="banner-item"><img src="https://via.placeholder.com/200x200?text=Skincare" alt="Skincare"></div>
+                <div class="banner-item"><img src="https://via.placeholder.com/200x200?text=Wellness" alt="Wellness"></div>
+                <div class="banner-item"><img src="https://via.placeholder.com/200x200?text=Treatment" alt="Treatment"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💆‍♀️</div>
+                    <h3>Traditional Massage</h3>
+                    <p>Authentic massage techniques combined with certified expertise. Available at your home or hotel.</p>
+                    <a href="#booking" class="service-link">Book Now →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Luxury Skin Care</h3>
+                    <p>Premium skincare treatments tailored to your skin type. Experience relaxation and rejuvenation.</p>
+                    <a href="#booking" class="service-link">Book Now →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3>Wellness Treatments</h3>
+                    <p>Holistic wellness sessions combining massage, skincare, and relaxation techniques.</p>
+                    <a href="#booking" class="service-link">Book Now →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💎</div>
+                    <h3>Premium Massage</h3>
+                    <p>The ultimate in luxury & convenience. Experience authentic therapies delivered with personal attention.</p>
+                    <a href="#booking" class="service-link">Book Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About LUMÉ</h2>
+                    <p>At LUMÉ by Kiesha, we believe in the transformative power of personalized wellness. Our mobile massage and skincare services bring luxury directly to you—whether you're at home, in your hotel, or anywhere in Johannesburg.</p>
+                    <p>With years of certified expertise and a commitment to authenticity, we deliver the ultimate in relaxation and rejuvenation. Every treatment is tailored to your unique needs, ensuring you leave feeling refreshed, restored, and revitalized.</p>
+                    <ul class="features-list">
+                        <li>✓ Privacy, Comfort & Exclusivity</li>
+                        <li>✓ Certified Professional Therapists</li>
+                        <li>✓ Premium Products & Techniques</li>
+                        <li>✓ Flexible Scheduling & Booking</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <img src="/assets/founder1.jpeg" alt="Kiesha">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose LUMÉ</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <h3>Seamless Booking</h3>
+                    <p>Book online or via WhatsApp instantly. Confirmation within minutes.</p>
+                </div>
+                <div class="reason-card">
+                    <h3>Convenience</h3>
+                    <p>We come to you. No need to travel—enjoy treatments at your preferred location.</p>
+                </div>
+                <div class="reason-card">
+                    <h3>Luxury Experience</h3>
+                    <p>Premium products, professional techniques, and personalized attention every time.</p>
+                </div>
+                <div class="reason-card">
+                    <h3>Expert Therapists</h3>
+                    <p>Certified professionals trained in traditional massage and modern skincare.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Pricing & Booking</h2>
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>Traditional Massage</h3>
+                    <p class="price">2,500 rands</p>
+                    <p class="duration">60 Minutes</p>
+                    <ul class="price-features">
+                        <li>✓ Authentic techniques</li>
+                        <li>✓ Full body treatment</li>
+                        <li>✓ Includes consultation</li>
+                    </ul>
+                    <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Book Now</button>
+                </div>
+                <div class="price-card featured">
+                    <span class="badge">Most Popular</span>
+                    <h3>Luxury Wellness Package</h3>
+                    <p class="price">3,500 rands</p>
+                    <p class="duration">90 Minutes</p>
+                    <ul class="price-features">
+                        <li>✓ Massage + skincare</li>
+                        <li>✓ Premium products</li>
+                        <li>✓ Full body treatment</li>
+                        <li>✓ Personalized consultation</li>
+                    </ul>
+                    <button class="btn-secondary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Book Now</button>
+                </div>
+                <div class="price-card">
+                    <h3>Express Treatment</h3>
+                    <p class="price">1,500 rands</p>
+                    <p class="duration">30 Minutes</p>
+                    <ul class="price-features">
+                        <li>✓ Quick revitalization</li>
+                        <li>✓ Targeted treatment</li>
+                        <li>✓ Perfect for busy days</li>
+                    </ul>
+                    <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">Reserve Your Session</h2>
+            <div class="booking-container">
+                <div class="booking-form">
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <select id="service" name="service" required>
+                                <option>Select a service</option>
+                                <option>Traditional Massage</option>
+                                <option>Luxury Wellness Package</option>
+                                <option>Express Treatment</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Preferred Time</label>
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location (Home/Hotel)</label>
+                            <input type="text" id="location" name="location" placeholder="Your address" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Confirm Booking</button>
+                    </form>
+                </div>
+                <div class="booking-info">
+                    <h3>Easy Booking</h3>
+                    <p>Choose your preferred booking method:</p>
+                    <div class="contact-methods">
+                        <div class="method">
+                            <h4>📞 Call</h4>
+                            <p>+27 71 034 5610</p>
+                        </div>
+                        <div class="method">
+                            <h4>💬 WhatsApp</h4>
+                            <p>+27 71 034 5610</p>
+                        </div>
+                        <div class="method">
+                            <h4>📧 Email</h4>
+                            <p>khumalokiesha@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>WhatsApp</h3>
+                    <p>+27 71 034 5610</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Call</h3>
+                    <p>+27 71 034 5610</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p>khumalokiesha@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Instagram</h3>
+                    <p>@theritual_room_ig</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 LUMÉ by Kiesha. Mobile Wellness & Skin Care in Prague.</p>
+            <p>All rights reserved. Privacy • Terms • Contact</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
