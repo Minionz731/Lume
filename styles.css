@@ -1,14 +1,49 @@
+/* Playlist Script is not on Google Fonts: place the licensed file at
+   assets/fonts/PlaylistScript.otf (or install it locally). Falls back to Great Vibes. */
+@font-face {
+    font-family: 'Playlist Script';
+    src: local('Playlist Script'), local('PlaylistScript'),
+         url('assets/fonts/PlaylistScript.woff2') format('woff2'),
+         url('assets/fonts/PlaylistScript.otf') format('opentype');
+    font-display: swap;
+}
+
 :root {
-    --primary-color: #8B6F47;
-    --primary-light: #C9A574;
-    --primary-dark: #5D4A35;
-    --accent-gold: #D4AF6A;
-    --dark-bg: #1A1410;
-    --light-bg: #F5F1ED;
-    --cream-bg: #E8DFD5;
-    --text-dark: #2C2420;
-    --text-light: #7A7066;
-    --border-light: #DDD4C9;
+    /* Brand palette: deep dusty plum, matte metallic lavender, white */
+    --plum: #493342;
+    --lavender: #806181;
+    --white: #FFFFFF;
+    --tint: rgba(128, 97, 129, 0.06);
+    --tint-2: rgba(128, 97, 129, 0.14);
+
+    --primary-color: var(--plum);
+    --primary-light: var(--lavender);
+    --primary-dark: var(--lavender);
+    --accent-gold: var(--lavender);
+    --dark-bg: var(--plum);
+    --light-bg: var(--white);
+    --cream-bg: var(--tint-2);
+    --text-dark: var(--plum);
+    --text-light: var(--lavender);
+    --border-light: rgba(128, 97, 129, 0.25);
+}
+
+.font-brand {
+    font-family: 'Playlist Script', 'Great Vibes', cursive;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: -0.15em;
+    flex-shrink: 0;
 }
 
 * {
@@ -29,7 +64,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-dark);
 }
 
@@ -41,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation */
 .navbar {
-    background: linear-gradient(135deg, #fff 0%, #F5F1ED 100%);
+    background: linear-gradient(135deg, var(--white) 0%, var(--tint) 100%);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -59,10 +94,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo h1 {
-    font-size: 2rem;
-    letter-spacing: 3px;
+    font-family: 'Playlist Script', 'Great Vibes', cursive;
+    font-size: 2.2rem;
     color: var(--primary-color);
     font-weight: 700;
+    line-height: 1.1;
 }
 
 .nav-links {
@@ -105,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-reservation:hover {
     background-color: var(--primary-dark);
-    box-shadow: 0 5px 15px rgba(139, 111, 71, 0.3);
+    box-shadow: 0 5px 15px rgba(73, 51, 66, 0.3);
 }
 
 .menu-toggle {
@@ -130,12 +166,18 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 4rem;
     padding: 4rem 0;
-    background: linear-gradient(135deg, #F5F1ED 0%, #E8DFD5 100%);
+    background: linear-gradient(135deg, var(--tint) 0%, var(--tint-2) 100%);
+}
+
+.hero-content {
+    padding-left: 20px;
 }
 
 .hero-content h2 {
-    font-size: 3.5rem;
-    line-height: 1.2;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: 4.5rem;
+    line-height: 1.15;
     margin-bottom: 1.5rem;
     color: var(--text-dark);
 }
@@ -182,19 +224,19 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(139, 111, 71, 0.2);
+    box-shadow: 0 5px 15px rgba(73, 51, 66, 0.2);
     letter-spacing: 0.5px;
 }
 
 .btn-primary:hover {
     background-color: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(139, 111, 71, 0.3);
+    box-shadow: 0 8px 20px rgba(73, 51, 66, 0.3);
 }
 
 .btn-secondary {
     background-color: var(--accent-gold);
-    color: var(--text-dark);
+    color: var(--white);
     padding: 1rem 2.5rem;
     border: none;
     border-radius: 50px;
@@ -202,13 +244,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(212, 175, 106, 0.2);
+    box-shadow: 0 5px 15px rgba(128, 97, 129, 0.2);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-light);
+    background-color: var(--plum);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(212, 175, 106, 0.3);
+    box-shadow: 0 8px 20px rgba(128, 97, 129, 0.3);
 }
 
 /* Section Titles */
@@ -217,7 +259,19 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--primary-color);
+    font-weight: 600;
     letter-spacing: 1px;
+}
+
+.btn-primary,
+.btn-secondary,
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Services Section */
@@ -233,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card {
-    background: linear-gradient(135deg, #F5F1ED 0%, white 100%);
+    background: linear-gradient(135deg, var(--tint) 0%, white 100%);
     padding: 2.5rem;
     border-radius: 15px;
     text-align: center;
@@ -243,12 +297,32 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(139, 111, 71, 0.15);
+    box-shadow: 0 15px 35px rgba(73, 51, 66, 0.15);
 }
 
 .service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    background-color: var(--tint-2);
+    color: var(--plum);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.features-list li,
+.price-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.features-list .icon,
+.price-features .icon {
+    color: var(--lavender);
 }
 
 .service-card h3 {
@@ -277,7 +351,7 @@ h1, h2, h3, h4, h5, h6 {
 /* About Section */
 .about {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #E8DFD5 0%, #F5F1ED 100%);
+    background: linear-gradient(135deg, var(--tint-2) 0%, var(--tint) 100%);
 }
 
 .about-content {
@@ -334,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .reason-card {
-    background: linear-gradient(135deg, #F5F1ED 0%, #E8DFD5 100%);
+    background: linear-gradient(135deg, var(--tint) 0%, var(--tint-2) 100%);
     padding: 2rem;
     border-radius: 12px;
     border-left: 4px solid var(--primary-color);
@@ -354,7 +428,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Pricing Section */
 .pricing {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #E8DFD5 0%, #F5F1ED 100%);
+    background: linear-gradient(135deg, var(--tint-2) 0%, var(--tint) 100%);
 }
 
 .pricing-cards {
@@ -375,7 +449,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .price-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(139, 111, 71, 0.2);
+    box-shadow: 0 15px 35px rgba(73, 51, 66, 0.2);
 }
 
 .price-card.featured {
@@ -389,7 +463,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--accent-gold);
-    color: var(--text-dark);
+    color: var(--white);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
     font-weight: 600;
@@ -444,7 +518,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .booking-form {
-    background: linear-gradient(135deg, #F5F1ED 0%, #E8DFD5 100%);
+    background: linear-gradient(135deg, var(--tint) 0%, var(--tint-2) 100%);
     padding: 3rem;
     border-radius: 15px;
 }
@@ -496,26 +570,42 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .method {
-    background: linear-gradient(135deg, #F5F1ED 0%, #E8DFD5 100%);
+    background: linear-gradient(135deg, var(--tint) 0%, var(--tint-2) 100%);
     padding: 1.5rem;
     border-radius: 10px;
     border-left: 4px solid var(--primary-color);
 }
 
+.method {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.method:hover,
+.contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(73, 51, 66, 0.12);
+}
+
 .method h4 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
 }
 
 .method p {
     color: var(--text-light);
     font-weight: 500;
+    overflow-wrap: anywhere;
 }
 
 /* Contact Section */
 .contact {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #E8DFD5 0%, #F5F1ED 100%);
+    background: linear-gradient(135deg, var(--tint-2) 0%, var(--tint) 100%);
 }
 
 .contact-info {
@@ -532,6 +622,18 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+.contact-item {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item .icon {
+    font-size: 1.8rem;
+    color: var(--lavender);
+    margin-bottom: 0.75rem;
+}
+
 .contact-item h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
@@ -540,14 +642,44 @@ h1, h2, h3, h4, h5, h6 {
 .contact-item p {
     color: var(--text-light);
     font-weight: 500;
+    overflow-wrap: anywhere;
 }
 
 /* Footer */
 .footer {
     background-color: var(--dark-bg);
-    color: var(--light-bg);
+    color: var(--white);
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.5rem 0 2rem;
+}
+
+.footer-brand {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.footer-social a:hover {
+    background-color: var(--lavender);
 }
 
 .footer p {
@@ -563,7 +695,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-content h2 {
-        font-size: 2.2rem;
+        font-size: 3.2rem;
     }
 
     .nav-links {
@@ -618,7 +750,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 480px) {
     .hero-content h2 {
-        font-size: 1.8rem;
+        font-size: 2.6rem;
     }
 
     .hero-subtitle {

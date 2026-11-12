@@ -22,27 +22,22 @@ bookingForm.addEventListener('submit', (e) => {
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const service = document.getElementById('service').value;
-    const date = document.getElementById('date').value;
-    const time = document.getElementById('time').value;
     const location = document.getElementById('location').value;
 
-    // Create WhatsApp message
-    const message = `Hi! I would like to book a session at LUMÉ by Kiesha.
+    const message = `Hi! I would like to book or inquire about a session at Lumé by Keisha.
 
 Name: ${name}
 Email: ${email}
 Phone: ${phone}
 Service: ${service}
-Date: ${date}
-Time: ${time}
 Location: ${location}
 
-Please confirm my booking. Thank you!`;
+Thank you!`;
 
+    const subject = encodeURIComponent('Booking / Inquiry | Lumé by Keisha');
     const encodedMessage = encodeURIComponent(message);
 
-    // Send email
-    window.location.href = `mailto:khumalokiesha@gmail.com?subject=LUMÉ Booking Request&body=${encodedMessage}`;
+    window.location.href = `mailto:khumalokiesha@gmail.com?subject=${subject}&body=${encodedMessage}`;
 
     // Reset form
     bookingForm.reset();

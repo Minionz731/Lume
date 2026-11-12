@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMÉ by Kiesha - Mobile Wellness & Skin Care</title>
+    <title>Lumé by Keisha | Mobile Spa in Johannesburg, South Africa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Icon sprite -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-massage" viewBox="0 0 24 24"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/></symbol>
+        <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/></symbol>
+        <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+        <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></symbol>
+        <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    </svg>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <h1>LUMÉ</h1>
+                <h1>Lumé by Keisha</h1>
             </div>
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
@@ -34,7 +51,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h2 class="hero-title">Mobile Spa<br>at the comfort of your home</h2>
-            <p class="hero-subtitle">Relax, Rejuvenate, and Recharge—Wherever you are</p>
+            <p class="hero-subtitle">Relax, Rejuvenate and Recharge, wherever you are in Johannesburg</p>
             <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Book Your Session</button>
         </div>
         <div class="hero-banner">
@@ -53,28 +70,28 @@
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">💆‍♀️</div>
+                    <div class="service-icon"><svg class="icon"><use href="#i-massage"/></svg></div>
                     <h3>Traditional Massage</h3>
                     <p>Authentic massage techniques combined with certified expertise. Available at your home or hotel.</p>
-                    <a href="#booking" class="service-link">Book Now →</a>
+                    <a href="#booking" class="service-link">Book Now <svg class="icon"><use href="#i-arrow"/></svg></a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">✨</div>
+                    <div class="service-icon"><svg class="icon"><use href="#i-sparkles"/></svg></div>
                     <h3>Luxury Skin Care</h3>
                     <p>Premium skincare treatments tailored to your skin type. Experience relaxation and rejuvenation.</p>
-                    <a href="#booking" class="service-link">Book Now →</a>
+                    <a href="#booking" class="service-link">Book Now <svg class="icon"><use href="#i-arrow"/></svg></a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🌿</div>
+                    <div class="service-icon"><svg class="icon"><use href="#i-leaf"/></svg></div>
                     <h3>Wellness Treatments</h3>
                     <p>Holistic wellness sessions combining massage, skincare, and relaxation techniques.</p>
-                    <a href="#booking" class="service-link">Book Now →</a>
+                    <a href="#booking" class="service-link">Book Now <svg class="icon"><use href="#i-arrow"/></svg></a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">💎</div>
+                    <div class="service-icon"><svg class="icon"><use href="#i-gem"/></svg></div>
                     <h3>Premium Massage</h3>
                     <p>The ultimate in luxury & convenience. Experience authentic therapies delivered with personal attention.</p>
-                    <a href="#booking" class="service-link">Book Now →</a>
+                    <a href="#booking" class="service-link">Book Now <svg class="icon"><use href="#i-arrow"/></svg></a>
                 </div>
             </div>
         </div>
@@ -85,19 +102,19 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="section-title">About LUMÉ</h2>
-                    <p>At LUMÉ by Kiesha, we believe in the transformative power of personalized wellness. Our mobile massage and skincare services bring luxury directly to you, whether you're at home, in your hotel, or anywhere in Johannesburg.</p>
+                    <h2 class="section-title">About <span class="font-brand">Lumé</span></h2>
+                    <p>At <span class="font-brand">Lumé by Keisha</span>, we believe in the transformative power of personalized wellness. Our mobile massage and skincare services bring luxury directly to you, whether you're at home, in your hotel, or anywhere in Johannesburg.</p>
                     <p>With years of certified expertise and a commitment to authenticity, we deliver the ultimate in relaxation and rejuvenation. Every treatment is tailored to your unique needs, ensuring you leave feeling refreshed, restored, and revitalized.</p>
                     <ul class="features-list">
-                        <li>✓ Privacy, Comfort & Exclusivity</li>
-                        <li>✓ Certified Professional Therapists</li>
-                        <li>✓ Premium Products & Techniques</li>
-                        <li>✓ Flexible Scheduling & Booking</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Privacy, Comfort & Exclusivity</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Certified Professional Therapists</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Premium Products & Techniques</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Flexible Scheduling & Booking</li>
                     </ul>
                 </div>
                 <div class="about-image">
                     <div class="image-placeholder">
-                        <img src="/assets/founder1.jpeg" alt="Kiesha">
+                        <img src="assets/founder1.jpeg" alt="Keisha, founder of Lumé">
                     </div>
                 </div>
             </div>
@@ -107,15 +124,15 @@
     <!-- Why Choose Us Section -->
     <section class="why-choose-us">
         <div class="container">
-            <h2 class="section-title">Why Choose LUMÉ</h2>
+            <h2 class="section-title">Why Choose <span class="font-brand">Lumé</span></h2>
             <div class="reasons-grid">
                 <div class="reason-card">
                     <h3>Seamless Booking</h3>
-                    <p>Book online or via WhatsApp instantly. Confirmation within minutes.</p>
+                    <p>Book online or send us an email. Confirmation within minutes.</p>
                 </div>
                 <div class="reason-card">
                     <h3>Convenience</h3>
-                    <p>We come to you. No need to travel—enjoy treatments at your preferred location.</p>
+                    <p>We come to you. No need to travel, simply enjoy treatments at your preferred location.</p>
                 </div>
                 <div class="reason-card">
                     <h3>Luxury Experience</h3>
@@ -139,9 +156,9 @@
                     <p class="price">2,500 rands</p>
                     <p class="duration">60 Minutes</p>
                     <ul class="price-features">
-                        <li>✓ Authentic techniques</li>
-                        <li>✓ Full body treatment</li>
-                        <li>✓ Includes consultation</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Authentic techniques</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Full body treatment</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Includes consultation</li>
                     </ul>
                     <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Book Now</button>
                 </div>
@@ -151,10 +168,10 @@
                     <p class="price">3,500 rands</p>
                     <p class="duration">90 Minutes</p>
                     <ul class="price-features">
-                        <li>✓ Massage + skincare</li>
-                        <li>✓ Premium products</li>
-                        <li>✓ Full body treatment</li>
-                        <li>✓ Personalized consultation</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Massage + skincare</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Premium products</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Full body treatment</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Personalized consultation</li>
                     </ul>
                     <button class="btn-secondary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Book Now</button>
                 </div>
@@ -163,9 +180,9 @@
                     <p class="price">1,500 rands</p>
                     <p class="duration">30 Minutes</p>
                     <ul class="price-features">
-                        <li>✓ Quick revitalization</li>
-                        <li>✓ Targeted treatment</li>
-                        <li>✓ Perfect for busy days</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Quick revitalization</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Targeted treatment</li>
+                        <li><svg class="icon"><use href="#i-check"/></svg>Perfect for busy days</li>
                     </ul>
                     <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Book Now</button>
                 </div>
@@ -195,43 +212,35 @@
                         <div class="form-group">
                             <label for="service">Service</label>
                             <select id="service" name="service" required>
-                                <option>Select a service</option>
+                                <option value="">Select a service</option>
                                 <option>Traditional Massage</option>
                                 <option>Luxury Wellness Package</option>
                                 <option>Express Treatment</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="date">Preferred Date</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="time">Preferred Time</label>
-                            <input type="time" id="time" name="time" required>
-                        </div>
-                        <div class="form-group">
                             <label for="location">Location (Home/Hotel)</label>
                             <input type="text" id="location" name="location" placeholder="Your address" required>
                         </div>
-                        <button type="submit" class="btn-primary">Confirm Booking</button>
+                        <button type="submit" class="btn-primary">Book / Inquire</button>
                     </form>
                 </div>
                 <div class="booking-info">
                     <h3>Easy Booking</h3>
                     <p>Choose your preferred booking method:</p>
                     <div class="contact-methods">
-                        <div class="method">
-                            <h4>📞 Call</h4>
+                        <a class="method" href="mailto:khumalokiesha@gmail.com?subject=Call%20Request%20%7C%20Lum%C3%A9%20by%20Keisha">
+                            <h4><svg class="icon"><use href="#i-phone"/></svg>Call</h4>
                             <p>+27 71 034 5610</p>
-                        </div>
-                        <div class="method">
-                            <h4>💬 WhatsApp</h4>
+                        </a>
+                        <a class="method" href="mailto:khumalokiesha@gmail.com?subject=WhatsApp%20Request%20%7C%20Lum%C3%A9%20by%20Keisha">
+                            <h4><svg class="icon"><use href="#i-chat"/></svg>WhatsApp</h4>
                             <p>+27 71 034 5610</p>
-                        </div>
-                        <div class="method">
-                            <h4>📧 Email</h4>
+                        </a>
+                        <a class="method" href="mailto:khumalokiesha@gmail.com?subject=Booking%20Inquiry%20%7C%20Lum%C3%A9%20by%20Keisha">
+                            <h4><svg class="icon"><use href="#i-mail"/></svg>Email</h4>
                             <p>khumalokiesha@gmail.com</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -243,22 +252,31 @@
         <div class="container">
             <h2 class="section-title">Get in Touch</h2>
             <div class="contact-info">
-                <div class="contact-item">
+                <a class="contact-item" href="mailto:khumalokiesha@gmail.com?subject=WhatsApp%20Request%20%7C%20Lum%C3%A9%20by%20Keisha">
+                    <svg class="icon"><use href="#i-chat"/></svg>
                     <h3>WhatsApp</h3>
                     <p>+27 71 034 5610</p>
-                </div>
-                <div class="contact-item">
+                </a>
+                <a class="contact-item" href="mailto:khumalokiesha@gmail.com?subject=Call%20Request%20%7C%20Lum%C3%A9%20by%20Keisha">
+                    <svg class="icon"><use href="#i-phone"/></svg>
                     <h3>Call</h3>
                     <p>+27 71 034 5610</p>
-                </div>
-                <div class="contact-item">
+                </a>
+                <a class="contact-item" href="mailto:khumalokiesha@gmail.com?subject=Inquiry%20%7C%20Lum%C3%A9%20by%20Keisha">
+                    <svg class="icon"><use href="#i-mail"/></svg>
                     <h3>Email</h3>
                     <p>khumalokiesha@gmail.com</p>
-                </div>
-                <div class="contact-item">
+                </a>
+                <a class="contact-item" href="https://www.instagram.com/theritualroom_ig?rpxt=MWV4Y2xyd2s3aTJ3ZQ==" target="_blank" rel="noopener">
+                    <svg class="icon"><use href="#i-instagram"/></svg>
                     <h3>Instagram</h3>
-                    <p>@theritual_room_ig</p>
-                </div>
+                    <p>@theritualroom_ig</p>
+                </a>
+                <a class="contact-item" href="https://www.facebook.com/share/1NUF3WxzcP/?mibextid=wwXIfr" target="_blank" rel="noopener">
+                    <svg class="icon"><use href="#i-facebook"/></svg>
+                    <h3>Facebook</h3>
+                    <p>Follow us on Facebook</p>
+                </a>
             </div>
         </div>
     </section>
@@ -266,7 +284,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 LUMÉ by Kiesha. Mobile Wellness & Skin Care in Prague.</p>
+            <p class="footer-brand font-brand">Lumé by Keisha</p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/theritualroom_ig?rpxt=MWV4Y2xyd2s3aTJ3ZQ==" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+                <a href="https://www.facebook.com/share/1NUF3WxzcP/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a>
+                <a href="mailto:khumalokiesha@gmail.com" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a>
+            </div>
+            <p>&copy; 2024 Lumé by Keisha. Mobile Spa & Skin Care in Johannesburg, South Africa.</p>
             <p>All rights reserved. Privacy • Terms • Contact</p>
         </div>
     </footer>

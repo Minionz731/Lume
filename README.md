@@ -1,69 +1,69 @@
-# LUMÉ by Kiesha - Luxury Wellness & Skin Care Website
+# Lumé by Keisha | Luxury Wellness & Skin Care Website
 
-Welcome to the LUMÉ by Kiesha repository! This is a luxurious, fully responsive website for a mobile wellness and skin care service based in Prague.
+Welcome to the Lumé by Keisha repository! This is a luxurious, fully responsive website for a mobile wellness and skin care service based in Johannesburg, South Africa.
 
-## 🌟 Features
+## Features
 
-- **Elegant Design**: Luxurious aesthetic with warm, earthy tones (browns, golds, and creams)
+- **Elegant Design**: Luxurious aesthetic with deep dusty plum, matte metallic lavender and white
 - **Responsive Layout**: Mobile-first design that works seamlessly across all devices
 - **Sections Included**:
-  - Hero section with compelling call-to-action
-  - Services overview with 4 premium offerings
-  - About section highlighting expertise and approach
-  - Why Choose Us with key benefits
-  - Pricing table with featured package
-  - Booking form with multiple contact methods
-  - Contact information and footer
+  | Hero section with compelling call-to-action
+  | Services overview with 4 premium offerings
+  | About section highlighting expertise and approach
+  | Why Choose Us with key benefits
+  | Pricing table with featured package
+  | Booking form with multiple contact methods
+  | Contact information and footer
 
-## 🎨 Design Highlights
+## Design Highlights
 
 ### Color Palette
-- **Primary Color**: `#8B6F47` (Warm Brown)
-- **Accent Gold**: `#D4AF6A` (Luxury Gold)
-- **Backgrounds**: Soft cream and beige tones
-- **Text**: Dark brown for optimal readability
+- **Primary Color**: `#493342` (Deep Dusty Plum)
+- **Accent**: `#806181` (Matte Metallic Lavender)
+- **Backgrounds**: White with soft lavender tints
+- **Text**: Deep dusty plum
 
 ### Typography
-- **Headings**: Playfair Display (elegant serif)
+- **Headings**: Montserrat; brand name in Playlist Script, hero tagline in Great Vibes
 - **Body**: Montserrat (modern sans-serif)
 
-## 📂 Files
+## Files
 
-- **index.html** - Main website structure
-- **styles.css** - Complete styling and responsive design
-- **script.js** - Interactive features and form handling
+- **index.html** | Main website structure
+- **styles.css** | Complete styling and responsive design
+- **script.js** | Interactive features and form handling
 
-## 🚀 Features
+## Features
 
-1. **Navigation Bar** - Sticky navigation with smooth scrolling
-2. **Mobile Menu** - Responsive hamburger menu for mobile devices
-3. **Hero Section** - Eye-catching banner with call-to-action
-4. **Services Grid** - 4 service cards with smooth hover effects
-5. **About Section** - Professional introduction with image placeholder
-6. **Booking Form** - Full contact form with email integration
-7. **Pricing Cards** - Featured pricing with visual hierarchy
-8. **Contact Section** - Multiple contact methods displayed
-9. **Smooth Animations** - Scroll animations and transitions throughout
+1. **Navigation Bar** | Sticky navigation with smooth scrolling
+2. **Mobile Menu** | Responsive hamburger menu for mobile devices
+3. **Hero Section** | Eye-catching banner with call-to-action
+4. **Services Grid** | 4 service cards with smooth hover effects
+5. **About Section** | Professional introduction with image placeholder
+6. **Booking Form** | Full contact form with email integration
+7. **Pricing Cards** | Featured pricing with visual hierarchy
+8. **Contact Section** | Multiple contact methods displayed
+9. **Smooth Animations** | Scroll animations and transitions throughout
 
-## 📱 Responsive Design
+## Responsive Design
 
 The website includes breakpoints for:
 - Desktop (1200px+)
-- Tablet (768px - 1199px)
-- Mobile (480px - 767px)
+- Tablet (768px | 1199px)
+- Mobile (480px | 767px)
 - Small Mobile (<480px)
 
-## 🔧 Customization
+## Customization
 
 To customize the website:
 
-1. **Contact Information** - Replace placeholder phone numbers and email addresses
-2. **Images** - Replace placeholder images with actual service photos
-3. **Text Content** - Update descriptions, prices, and service details
-4. **Colors** - Modify CSS variables in `styles.css` to change the color scheme
-5. **Pricing** - Update pricing tiers in the pricing section
+1. **Contact Information** | Replace placeholder phone numbers and email addresses
+2. **Images** | Replace placeholder images with actual service photos
+3. **Text Content** | Update descriptions, prices, and service details
+4. **Colors** | Modify CSS variables in `styles.css` to change the color scheme
+5. **Pricing** | Update pricing tiers in the pricing section
 
-## 📞 Contact Integration
+## Contact Integration
 
 The booking form currently:
 - Collects customer information
@@ -72,10 +72,10 @@ The booking form currently:
 
 To enable WhatsApp integration, update the phone number in `script.js`:
 ```javascript
-const whatsappNumber = '420XXXXXXXXX'; // Add your WhatsApp number
+const whatsappNumber = '27710345610'; // Add your WhatsApp number
 ```
 
-## 🎯 Next Steps
+## Next Steps
 
 1. Replace placeholder images with actual photos
 2. Update contact information with real phone numbers and email
@@ -84,10 +84,9 @@ const whatsappNumber = '420XXXXXXXXX'; // Add your WhatsApp number
 5. Set up Google Analytics or similar tracking
 6. Configure DNS and domain settings
 
-## 📄 License
+## License
 
-This website template is created for LUMÉ by Kiesha. All rights reserved.
+This website template is created for Lumé by Keisha. All rights reserved.
 
----
 
-**Created with ❤️ for luxury wellness experiences**
+**Created for luxury wellness experiences**
