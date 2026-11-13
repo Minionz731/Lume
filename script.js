@@ -2,15 +2,20 @@
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
+function setMenuOpen(open) {
+    navLinks.classList.toggle('active', open);
+    menuToggle.classList.toggle('open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+
 menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    setMenuOpen(!navLinks.classList.contains('active'));
 });
 
-// Close mobile menu when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-    });
+// Close mobile menu when any nav link (or Book Now) is clicked
+document.querySelectorAll('.nav-links a, .btn-reservation').forEach(link => {
+    link.addEventListener('click', () => setMenuOpen(false));
 });
 
 // Form Submission
@@ -22,6 +27,7 @@ bookingForm.addEventListener('submit', (e) => {
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const service = document.getElementById('service').value;
+    const addons = document.getElementById('addons').value || 'None';
     const location = document.getElementById('location').value;
 
     const message = `Hi! I would like to book or inquire about a session at Lumé by Keisha.
@@ -30,6 +36,7 @@ Name: ${name}
 Email: ${email}
 Phone: ${phone}
 Service: ${service}
+Add Ons: ${addons}
 Location: ${location}
 
 Thank you!`;
@@ -41,6 +48,16 @@ Thank you!`;
 
     // Reset form
     bookingForm.reset();
+});
+
+// Combo "Book Now" buttons: preselect the combo and jump to the form
+document.querySelectorAll('[data-service]').forEach(button => {
+    button.addEventListener('click', () => {
+        const select = document.getElementById('service');
+        const match = [...select.options].find(o => o.text.startsWith(button.dataset.service));
+        if (match) select.value = match.value;
+        document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    });
 });
 
 // Smooth scroll for navigation

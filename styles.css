@@ -89,8 +89,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .logo h1 {
@@ -99,6 +99,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
     font-weight: 700;
     line-height: 1.1;
+    white-space: nowrap;
 }
 
 .nav-links {
@@ -106,6 +107,14 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;
     gap: 2rem;
     align-items: center;
+    margin-left: auto;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
 }
 
 .nav-links a {
@@ -132,9 +141,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-reservation {
+    display: inline-block;
     background-color: var(--primary-color);
-    color: white !important;
-    padding: 0.75rem 1.5rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1;
+    white-space: nowrap;
+    padding: 0.8rem 1.5rem;
     border-radius: 50px;
     transition: all 0.3s ease;
 }
@@ -147,15 +162,54 @@ h1, h2, h3, h4, h5, h6 {
 .menu-toggle {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0 8px;
+    background: none;
+    border: none;
     cursor: pointer;
 }
 
 .menu-toggle span {
-    width: 25px;
-    height: 3px;
+    display: block;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
     background-color: var(--primary-color);
-    margin: 5px 0;
-    transition: 0.3s;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Tablet: tighten spacing so links and button fit on one line */
+@media (max-width: 1024px) {
+    .nav-container {
+        gap: 1.25rem;
+    }
+
+    .nav-links {
+        gap: 1.25rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .logo h1 {
+        font-size: 1.9rem;
+    }
 }
 
 /* Hero Section */
@@ -207,10 +261,101 @@ h1, h2, h3, h4, h5, h6 {
     height: 250px;
 }
 
+.banner-item {
+    position: relative;
+    width: 220px;
+}
+
 .banner-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+.banner-label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.5rem 1rem 0.75rem;
+    background: linear-gradient(to top, rgba(73, 51, 66, 0.85), rgba(73, 51, 66, 0));
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Price menu */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.menu-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+.menu-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.menu-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--tint-2);
+    color: var(--plum);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.menu-head h3 {
+    font-size: 1.3rem;
+    color: var(--plum);
+}
+
+.menu-list {
+    list-style: none;
+}
+
+.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--plum);
+}
+
+.menu-list li:last-child {
+    border-bottom: none;
+}
+
+.menu-price {
+    font-weight: 600;
+    color: var(--lavender);
+    white-space: nowrap;
+}
+
+.combos-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--plum);
+    margin-bottom: 2.5rem;
 }
 
 /* Buttons */
@@ -698,31 +843,65 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 3.2rem;
     }
 
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .nav-links a {
-        font-size: 0.9rem;
+    .nav-container {
+        justify-content: space-between;
     }
 
     .menu-toggle {
         display: flex;
     }
 
-    .nav-links.active {
-        display: flex;
+    /* Links collapse into a dropdown opened by the menu button */
+    .nav-links {
+        display: none;
         flex-direction: column;
+        align-items: stretch;
+        gap: 0;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        background-color: white;
-        padding: 2rem;
+        margin: 0;
+        padding: 0.5rem 20px 1rem;
+        background-color: var(--white);
+        box-shadow: 0 10px 20px rgba(73, 51, 66, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.9rem 0;
+        font-size: 1rem;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .hero-banner {
+        padding: 0 16px;
     }
 
     .banner-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .banner-item {
+        width: 100%;
+        height: 180px;
     }
 
     .about-content {
@@ -757,15 +936,21 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem;
     }
 
-    .nav-links {
+    .nav-container {
+        padding: 0 16px;
+        gap: 0.75rem;
+    }
+
+    .nav-actions {
         gap: 0.5rem;
     }
 
-    .nav-links a {
-        font-size: 0.8rem;
+    .btn-reservation {
+        padding: 0.65rem 1.1rem;
+        font-size: 0.85rem;
     }
 
     .logo h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 }
