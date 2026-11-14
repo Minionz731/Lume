@@ -72,7 +72,7 @@ The booking form currently:
 
 To enable WhatsApp integration, update the phone number in `script.js`:
 ```javascript
-const whatsappNumber = '27710345610'; // Add your WhatsApp number
+const whatsappNumber = '27637578070'; // Add your WhatsApp number
 ```
 
 ## Next Steps
