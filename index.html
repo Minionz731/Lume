@@ -267,7 +267,9 @@
                             <input type="tel" id="phone" name="phone" inputmode="numeric" autocomplete="tel" placeholder="071 234 5678" maxlength="16" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" title="Enter a 10 digit phone number, e.g. 071 234 5678" required>
                         </div>
                         <div class="form-group">
-                            <label for="service">Service</label>
+                            <label for="service">Services <span class="label-hint">(choose up to 3)</span></label>
+                            <div class="select-rows" data-max="3" data-add-label="Add another service">
+                            <div class="select-row">
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
                                 <optgroup label="Signature Combos">
@@ -291,9 +293,13 @@
                                     <option>Classic Facial (R250)</option>
                                 </optgroup>
                             </select>
+                            </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="addons">Add Ons (optional)</label>
+                            <label for="addons">Add Ons <span class="label-hint">(optional)</span></label>
+                            <div class="select-rows" data-max="4" data-add-label="Add another add on">
+                            <div class="select-row">
                             <select id="addons" name="addons">
                                 <option value="">None</option>
                                 <option>Steamer (R50)</option>
@@ -301,7 +307,10 @@
                                 <option>Extractions (R50)</option>
                                 <option>LED (R50)</option>
                             </select>
+                            </div>
+                            </div>
                         </div>
+                        <p class="estimate" id="estimate" hidden>Estimated total: <strong id="estimateValue">R0</strong></p>
                         <div class="form-group">
                             <label for="location">Location (Home/Hotel)</label>
                             <input type="text" id="location" name="location" placeholder="Your address" required>

@@ -26,8 +26,8 @@ bookingForm.addEventListener('submit', (e) => {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
-    const service = document.getElementById('service').value;
-    const addons = document.getElementById('addons').value || 'None';
+    const services = selectedValues('service');
+    const addons = selectedValues('addons');
     const location = document.getElementById('location').value;
 
     const message = `Hi! I would like to book or inquire about a session at Lumé by Keisha.
@@ -35,8 +35,9 @@ bookingForm.addEventListener('submit', (e) => {
 Name: ${name}
 Email: ${email}
 Phone: ${phone}
-Service: ${service}
-Add Ons: ${addons}
+Services: ${services.join(', ')}
+Add Ons: ${addons.length ? addons.join(', ') : 'None'}
+Estimated total: R${estimateTotal()}
 Location: ${location}
 
 Thank you!`;
@@ -50,16 +51,100 @@ Thank you!`;
         window.location.href = whatsappUrl; // popup blocked: open in this tab
     }
 
-    // Reset form
+    // Reset form and remove the extra dropdown rows
     bookingForm.reset();
+    document.querySelectorAll('.select-row.extra').forEach(row => row.remove());
+    refreshSelectGroups();
 });
+
+// Multiple services / add ons: each group starts with one dropdown and an
+// "Add another" button that adds rows up to the group's data-max.
+const selectGroups = [...document.querySelectorAll('.select-rows')];
+
+function selectedValues(name) {
+    return [...bookingForm.querySelectorAll(`select[name="${name}"]`)]
+        .map(s => s.value)
+        .filter(Boolean);
+}
+
+function priceOf(text) {
+    const match = text.match(/R(\d+)/);
+    return match ? Number(match[1]) : 0;
+}
+
+function estimateTotal() {
+    return [...selectedValues('service'), ...selectedValues('addons')]
+        .reduce((sum, value) => sum + priceOf(value), 0);
+}
+
+function refreshSelectGroups() {
+    selectGroups.forEach(group => {
+        const selects = [...group.querySelectorAll('select')];
+        // Don't offer an option that is already chosen in another row
+        selects.forEach(select => {
+            const takenElsewhere = selects.filter(s => s !== select).map(s => s.value).filter(Boolean);
+            [...select.options].forEach(option => {
+                option.disabled = option.value !== '' && takenElsewhere.includes(option.value);
+            });
+        });
+        const addButton = group.querySelector('.add-row');
+        const optionCount = [...selects[0].options].filter(o => o.value !== '').length;
+        addButton.hidden = selects.length >= Math.min(Number(group.dataset.max), optionCount);
+    });
+
+    const total = estimateTotal();
+    document.getElementById('estimate').hidden = total === 0;
+    document.getElementById('estimateValue').textContent = `R${total}`;
+}
+
+selectGroups.forEach(group => {
+    const template = group.querySelector('select');
+
+    const addButton = document.createElement('button');
+    addButton.type = 'button';
+    addButton.className = 'add-row';
+    addButton.innerHTML = `<span aria-hidden="true">+</span> ${group.dataset.addLabel}`;
+    group.appendChild(addButton);
+
+    addButton.addEventListener('click', () => {
+        const row = document.createElement('div');
+        row.className = 'select-row extra';
+
+        const select = template.cloneNode(true);
+        select.removeAttribute('id');
+        select.removeAttribute('required');
+        select.value = '';
+        select.options[0].textContent = template.name === 'service' ? 'Select another service' : 'Select another add on';
+        select.setAttribute('aria-label', group.dataset.addLabel);
+
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'remove-row';
+        remove.setAttribute('aria-label', 'Remove');
+        remove.innerHTML = '&times;';
+        remove.addEventListener('click', () => {
+            row.remove();
+            refreshSelectGroups();
+        });
+
+        row.append(select, remove);
+        group.insertBefore(row, addButton);
+        refreshSelectGroups();
+        select.focus();
+    });
+
+    group.addEventListener('change', refreshSelectGroups);
+});
+
+refreshSelectGroups();
 
 // Combo "Book Now" buttons: preselect the combo and jump to the form
 document.querySelectorAll('[data-service]').forEach(button => {
     button.addEventListener('click', () => {
         const select = document.getElementById('service');
         const match = [...select.options].find(o => o.text.startsWith(button.dataset.service));
-        if (match) select.value = match.value;
+        if (match && !match.disabled) select.value = match.value;
+        refreshSelectGroups();
         document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
     });
 });
