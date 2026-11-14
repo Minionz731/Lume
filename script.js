@@ -41,10 +41,14 @@ Location: ${location}
 
 Thank you!`;
 
-    const subject = encodeURIComponent('Booking / Inquiry | Lumé by Keisha');
-    const encodedMessage = encodeURIComponent(message);
-
-    window.location.href = `mailto:khumalokiesha@gmail.com?subject=${subject}&body=${encodedMessage}`;
+    // Send the booking / inquiry to the business WhatsApp
+    const whatsappUrl = `https://wa.me/27637578070?text=${encodeURIComponent(message)}`;
+    const win = window.open(whatsappUrl, '_blank');
+    if (win) {
+        win.opener = null;
+    } else {
+        window.location.href = whatsappUrl; // popup blocked: open in this tab
+    }
 
     // Reset form
     bookingForm.reset();
@@ -126,22 +130,24 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Contact link functionality
-document.addEventListener('DOMContentLoaded', () => {
-    // Add phone number formatting
-    const phoneInputs = document.querySelectorAll('input[type="tel"]');
-    phoneInputs.forEach(input => {
-        input.addEventListener('input', (e) => {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 0) {
-                if (value.length <= 3) {
-                    e.target.value = value;
-                } else if (value.length <= 6) {
-                    e.target.value = value.slice(0, 3) + ' ' + value.slice(3);
-                } else {
-                    e.target.value = value.slice(0, 3) + ' ' + value.slice(3, 6) + ' ' + value.slice(6, 9);
-                }
-            }
-        });
+// Phone input: digits only, max 10, shown as "071 234 5678"
+document.querySelectorAll('input[type="tel"]').forEach(input => {
+    input.addEventListener('input', (e) => {
+        let digits = e.target.value.replace(/\D/g, '');
+        // Convert an international +27 number (e.g. +27 63 757 8070) to local 063 757 8070
+        if (digits.startsWith('27') && digits.length > 10) {
+            digits = '0' + digits.slice(2);
+        }
+        digits = digits.slice(0, 10);
+        if (digits.length <= 3) {
+            e.target.value = digits;
+        } else if (digits.length <= 6) {
+            e.target.value = digits.slice(0, 3) + ' ' + digits.slice(3);
+        } else {
+            e.target.value = digits.slice(0, 3) + ' ' + digits.slice(3, 6) + ' ' + digits.slice(6);
+        }
+        e.target.setCustomValidity(
+            digits.length === 10 ? '' : 'Please enter a 10 digit phone number, e.g. 071 234 5678'
+        );
     });
 });
